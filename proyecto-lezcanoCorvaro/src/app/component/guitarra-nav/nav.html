@@ -1,0 +1,111 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow fixed-top">
+
+  <div class="container-fluid px-4">
+
+    <!-- LOGO -->
+    <a class="navbar-brand d-flex align-items-center gap-2 fw-bold text-uppercase"
+       routerLink="/">
+
+      <span class="text-warning fs-3">🎸</span>
+
+      <span>
+        GUITAR<span class="text-danger">STORE</span>
+      </span>
+
+    </a>
+
+    <!-- BOTÓN RESPONSIVE -->
+    <button
+      class="navbar-toggler border-warning"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#menuGuitarras"
+      aria-controls="menuGuitarras"
+      aria-expanded="false"
+      aria-label="Abrir menú">
+
+      <span class="navbar-toggler-icon"></span>
+
+    </button>
+
+    <!-- MENÚ -->
+    <div class="collapse navbar-collapse" id="menuGuitarras">
+
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-3">
+
+        <li class="nav-item">
+          <a class="nav-link fw-semibold"
+             routerLink="/"
+             routerLinkActive="active"
+             [routerLinkActiveOptions]="{ exact: true }">
+            Inicio
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fw-semibold"
+             routerLink="/productos"
+             routerLinkActive="active">
+            Guitarras
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/accesorios" routerLinkActive="active">
+           Accesorios
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fw-semibold"
+             routerLink="/nosotros"
+             routerLinkActive="active">
+            Nosotros
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link fw-semibold"
+             routerLink="/contactos"
+             routerLinkActive="active">
+            Contacto
+          </a>
+        </li>
+
+      </ul>
+
+      <!-- FRASE DE LA TIENDA Y CARRITO -->
+      <div class="d-flex align-items-center gap-3 mt-3 mt-lg-0">
+
+        <span class="text-warning fw-semibold d-none d-xl-inline">
+          Encontrá tu propio sonido
+        </span>
+
+        <!-- CARRITO 
+        <a routerLink="/carrito"
+           class="btn btn-outline-warning position-relative rounded-pill px-3"
+           aria-label="Ver carrito">
+
+          <span class="fs-5">🛒</span>
+
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            {{ cantidadCarrito }}
+          </span>
+
+        </a>-->
+
+        <a routerLink="/not-found"
+        class="btn btn-outline-warning position-relative"
+        aria-label="Carrito de compras">
+        🛒
+        <span class="ms-1">Carrito</span>
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</nav>

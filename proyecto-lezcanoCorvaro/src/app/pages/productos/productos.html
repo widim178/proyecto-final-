@@ -1,0 +1,212 @@
+
+<!--
+<section class="bg-dark text-white py-5">
+
+  <div class="container py-4">
+
+     ENCABEZADO 
+    <div class="text-center mb-5">
+
+      <span class="badge bg-danger rounded-pill px-3 py-2 mb-3">
+        🎸 NUESTRA COLECCIÓN
+      </span>
+
+      <h1 class="display-3 fw-bold text-uppercase">
+        NUESTRAS <span class="text-warning">GUITARRAS</span>
+      </h1>
+
+      <p class="lead text-white-50 mt-3">
+        Descubrí nuestra colección de instrumentos.
+        Encontrá la guitarra ideal para expresar
+        tu pasión por la música.
+      </p>
+
+      <hr class="border-warning w-25 mx-auto mt-4">
+
+    </div>
+
+
+     CANTIDAD DE GUITARRAS 
+    <div class="d-flex justify-content-between align-items-center mb-4">
+
+      <h4 class="fw-bold mb-0">
+        Instrumentos disponibles
+      </h4>
+
+      <span class="badge bg-warning text-dark fs-6">
+        {{ guitarras.length }} guitarras
+      </span>
+
+    </div>
+
+
+     TARJETAS DE PRODUCTOS 
+    <div class="row g-4">
+
+      @for (guitarra of guitarras; track guitarra.id) {
+
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="card h-100 border-0 shadow">
+
+             IMÁGENES 
+            <div class="ratio ratio-4x3 bg-white">
+
+              <img
+                [src]= "guitarra.imagen"
+            [alt]= "guitarra.nombre"
+            class="card-img-top w-100 object-fit-contain bg-black p-3"
+            style="height: 260px;">
+
+            </div>
+
+
+             INFORMACIÓN 
+            <div class="card-body d-flex flex-column p-4">
+
+              <div class="d-flex justify-content-between align-items-center mb-3">
+
+                <span class="badge bg-danger">
+                  GUITARRA
+                </span>
+
+                <span class="badge bg-warning text-dark">
+                  {{ guitarra.anio }}
+                </span>
+
+              </div>
+
+
+               NOMBRE
+              <h5 class="card-title fw-bold text-dark text-uppercase">
+                {{ guitarra.nombre }}
+              </h5>
+
+
+               PRECIO 
+              <div class="mt-auto pt-3">
+
+                <hr>
+
+                <p class="text-secondary mb-1">
+                  Precio:
+                </p>
+
+                <h4 class="fw-bold text-danger">
+                  $ {{ guitarra.precio }}
+                </h4>
+
+                <button
+                    type="button"
+                    class="btn btn-danger w-100 fw-bold mt-3"
+                    (click)="onAgregar(guitarra)">
+
+                    <span class="me-2">🛒</span>
+                    AGREGAR AL CARRITO
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      }
+
+    </div>
+
+
+     SECCIÓN FINAL 
+    <div class="text-center mt-5 pt-4">
+
+      <h3 class="fw-bold">
+        ¿NO ENCONTRASTE LO QUE BUSCABAS?
+      </h3>
+
+      <p class="text-white-50 mt-3">
+        Contactanos y te ayudaremos a encontrar
+        el instrumento que necesitás.
+      </p>
+
+      <a routerLink="/contactos"
+         class="btn btn-warning btn-lg fw-bold px-5 mt-2">
+
+        CONTACTANOS
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>-->
+
+<div class="container-fluid bg-black text-white min-vh-100 py-5">
+  <div class="container">
+
+    <div class="text-center mb-5">
+      <span class="badge bg-danger px-3 py-2 mb-3">NUESTRA COLECCIÓN</span>
+      <h1 class="display-3 fw-bold text-uppercase">
+        NUESTRAS <span class="text-warning">GUITARRAS</span>
+      </h1>
+      <p class="text-secondary fs-5 mt-3">
+        Encontrá el instrumento ideal para crear tu propio sonido.
+      </p>
+    </div>
+
+    <div class="row g-4">
+
+      @for (producto of guitarras; track producto.id) {
+        <div class="col-12 col-md-6 col-lg-4">
+
+          <div class="card h-100 bg-dark text-white border border-secondary rounded-4 overflow-hidden shadow-lg">
+
+            <div class="position-relative">
+              <img
+                [src]="producto.imagen"
+                [alt]="producto.nombre"
+                class="card-img-top w-100 object-fit-contain bg-black p-3"
+                style="height: 260px;"
+              >
+
+              <span class="badge bg-danger position-absolute top-0 end-0 m-3 fs-6">
+                {{ producto.anio }}
+              </span>
+            </div>
+
+            <div class="card-body d-flex flex-column p-4">
+
+              <h5 class="card-title fw-bold text-warning text-uppercase mb-3">
+                {{ producto.nombre }}
+              </h5>
+
+              <p class="text-secondary">
+                Una guitarra para músicos que buscan calidad, personalidad y un sonido único.
+              </p>
+
+              <div class="mt-auto">
+                <h4 class="fw-bold mb-3">
+                  ${{ producto.precio }}
+                </h4>
+
+                <button
+                  type="button"
+                  class="btn btn-danger w-100 fw-bold py-2"
+                  (click)="onAgregar(producto)"
+                >
+                  🛒 AGREGAR AL CARRITO
+                </button>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      }
+
+    </div>
+  </div>
+</div>

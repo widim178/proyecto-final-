@@ -1,0 +1,89 @@
+<div class="container-fluid bg-black text-white min-vh-100 py-5">
+
+  <div class="container">
+
+<!-- ENCABEZADO -->
+<div class="text-center mb-5">
+  <span class="badge bg-danger px-3 py-2 mb-3">
+    COMPLEMENTÁ TU EQUIPO
+  </span>
+
+  <h1 class="display-3 fw-bold text-uppercase">
+    NUESTROS <span class="text-warning">ACCESORIOS</span>
+  </h1>
+
+  <p class="text-secondary fs-5 mt-3">
+    Todo lo que necesitás para cuidar, mejorar y disfrutar tu guitarra.
+  </p>
+</div>
+
+<!-- TARJETAS -->
+<div class="row g-4">
+
+  @for (accesorio of accesorios; track accesorio.id) {
+    <div class="col-12 col-md-6 col-lg-4">
+
+      <div class="card h-100 bg-dark text-white border border-secondary shadow-lg rounded-4 overflow-hidden">
+
+        <!-- IMAGEN -->
+        <div class="position-relative">
+          <img
+            [src]="accesorio.imagen || '/accesorio-placeholder.webp'"
+            [alt]="accesorio.nombre"
+            class="card-img-top w-100 object-fit-contain bg-black p-3"
+            style="height: 260px;"
+          >
+
+          <span class="badge bg-danger position-absolute top-0 end-0 m-3 fs-6">
+            {{ accesorio.anio }}
+          </span>
+        </div>
+
+        <!-- INFORMACIÓN -->
+        <div class="card-body d-flex flex-column p-4">
+
+          <h5 class="card-title fw-bold text-uppercase text-warning mb-3">
+            {{ accesorio.nombre }}
+          </h5>
+
+          <p class="card-text text-secondary">
+            Un accesorio ideal para acompañar tu instrumento y mejorar tu experiencia musical.
+          </p>
+
+          <div class="mt-auto">
+
+            <h4 class="fw-bold text-white mb-3">
+              ${{ accesorio.precio }}
+            </h4>
+
+            <button
+              type="button"
+              class="btn btn-danger w-100 fw-bold py-2"
+              (click)="onAgregar(accesorio)"
+            >
+              <span class="me-2">🛒</span>
+              AGREGAR AL CARRITO
+            </button>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  }
+
+</div>
+
+<!-- CIERRE -->
+<div class="text-center mt-5 pt-4">
+  <h3 class="fw-bold text-warning">
+    LOS DETALLES TAMBIÉN HACEN LA MÚSICA.
+  </h3>
+
+  <p class="text-secondary">
+    Encontrá todo lo que necesitás para tu próximo sonido.
+  </p>
+</div>
+
+  </div>
+</div>
